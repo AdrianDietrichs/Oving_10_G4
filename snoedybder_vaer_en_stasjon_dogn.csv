@@ -1,4 +1,3 @@
-#Navn;Stasjon;Tid(norsk normaltid);Snødybde;Nedbør (døgn);Middeltemperatur (døgn);Gjennomsnittlig skydekke (døgn);Høyeste middelvind (døgn)
 Venabu;SN13420;01.08.1980;0;0;13,8;5,7;2,6
 Venabu;SN13420;02.08.1980;0;0,5;13,1;7,3;4,6
 Venabu;SN13420;03.08.1980;0;26,3;12,2;6;2,6
@@ -15706,4 +15705,3 @@ Venabu;SN13420;06.10.2013;-;-;4,6;4,3;5,3
 Venabu;SN13420;07.10.2013;-;-;7,4;6,7;3,6
 Venabu;SN13420;15.10.2013;-;-;1;4,7;9
 Venabu;SN13420;16.10.2013;-;-;-1,5;8;7,7
-Data er gyldig per 02.08.2023 (CC BY 4.0), Meteorologisk institutt (MET);;;;;;;
