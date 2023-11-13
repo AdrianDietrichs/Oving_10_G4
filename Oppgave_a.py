@@ -1,23 +1,30 @@
+from datetime import datetime
+
 def leser_datafil():
-    fil = open("Oving_10/snoedybder_vaer_en_stasjon_dogn.csv", "r")
+    with open("snoedybder_vaer_en_stasjon_dogn.csv", "r") as fil:
+        linjer = fil.readlines()
 
-    linjer = fil.readlines()
+    data_dict = {}
 
-    liste = []
+    for linje in linjer:
+        linje = linje.strip().split(";")
+        stasjons_data = {}
 
-    for i in linjer:
-        if i[0] == "#":
-            i = ""
-        data = i.strip().split(";")
-        liste.append(data)
-    print(liste[5])
-    return liste
+        stasjons_data["Dato"] = datetime.strptime(linje[2], "%d.%m.%Y")
 
-leser_datafil()
+        stasjons_data["Snodybde"] = linje[3]
+        stasjons_data["Nedbor"] = linje[4]
+        stasjons_data["Middeltemperatur"] = linje[5]
+        stasjons_data["Skydekke"] = linje[6]
+        stasjons_data["Hoyeste_middelvind"] = linje[7]
 
-"""
-Dataene starter fra liste[1], grunnet linje 1 i datafil er bare tekst
-liste[i][0] = Navn
-liste[i][1] = stasjonsid
-osv...
-"""
+        år_nøkkel = stasjons_data["Dato"].year
+
+        if år_nøkkel not in data_dict:
+            data_dict[år_nøkkel] = []
+
+        data_dict[år_nøkkel].append(stasjons_data)
+
+    return data_dict
+#Eksempel på bruk
+print(leser_datafil()[2023][0]["Middeltemperatur"])
