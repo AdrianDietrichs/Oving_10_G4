@@ -5,15 +5,16 @@
 - Nathaniel
 - Andy
 
-Oppgave fordeling
-Adrian
-oppgaver: d,h,l
+# Oppgave fordeling
 
-Noah
-Oppgaver: e,i,m
+# Adrian
+oppgaver:
 
-Nathaniel
-Oppgaver: f,j
+# Noah
+Oppgaver:
 
-Andy
-Oppgaver: g,k
+# Nathaniel
+Oppgaver:
+
+# Andy
+Oppgaver:
