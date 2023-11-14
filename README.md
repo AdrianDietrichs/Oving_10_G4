@@ -1,5 +1,4 @@
 # Oving_10_G4
-Øving_10 DAT120
 - Adrian
 - Noah
 - Nathaniel
