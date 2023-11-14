@@ -12,11 +12,11 @@ def leser_datafil():
 
         stasjons_data["Dato"] = datetime.strptime(linje[2], "%d.%m.%Y")
 
-        stasjons_data["Snodybde"] = linje[3]
-        stasjons_data["Nedbor"] = linje[4]
-        stasjons_data["Middeltemperatur"] = linje[5]
-        stasjons_data["Skydekke"] = linje[6]
-        stasjons_data["Hoyeste_middelvind"] = linje[7]
+        stasjons_data["Snodybde"] = int(linje[3]) if linje[3] != "-" else None
+        stasjons_data["Nedbor"] = float(linje[4].replace(",", ".")) if linje[4] != "-" else None
+        stasjons_data["Middeltemperatur"] = float(linje[5].replace(",",".")) if linje[5] != "-" else None
+        stasjons_data["Skydekke"] = int(linje[7].replace(",",".")) if linje[7] != "-" else None
+        stasjons_data["Hoyeste_middelvind"] = float(linje[7].replace(",",".")) if linje[7] != "-" else None
 
         år_nøkkel = stasjons_data["Dato"].year
 
@@ -26,5 +26,6 @@ def leser_datafil():
         data_dict[år_nøkkel].append(stasjons_data)
 
     return data_dict
+
 #Eksempel på bruk
-print(leser_datafil()[2023][0]["Middeltemperatur"])
+#print(leser_datafil()[2023][0]["Middeltemperatur"])
