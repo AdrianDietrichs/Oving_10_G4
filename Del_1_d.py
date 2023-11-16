@@ -1,4 +1,3 @@
-liste = [1,2,3,4,5]
 def ListeIFTVerdi(a,b):
     resultat = 0
     for i in range(len(a)):

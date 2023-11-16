@@ -12,10 +12,10 @@ def leser_datafil():
 
         stasjons_data["Dato"] = datetime.strptime(linje[2], "%d.%m.%Y")
 
-        stasjons_data["Snodybde"] = int(linje[3]) if linje[3] != "-" else None
+        stasjons_data["Snodybde"] = float(linje[3]) if linje[3] != "-" else None
         stasjons_data["Nedbor"] = float(linje[4].replace(",", ".")) if linje[4] != "-" else None
         stasjons_data["Middeltemperatur"] = float(linje[5].replace(",",".")) if linje[5] != "-" else None
-        stasjons_data["Skydekke"] = int(linje[7].replace(",",".")) if linje[7] != "-" else None
+        stasjons_data["Skydekke"] = float(linje[7].replace(",",".")) if linje[7] != "-" else None
         stasjons_data["Hoyeste_middelvind"] = float(linje[7].replace(",",".")) if linje[7] != "-" else None
 
         år_nøkkel = stasjons_data["Dato"].year
