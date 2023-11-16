@@ -1,4 +1,3 @@
-from datetime import datetime
 from Del_1_f import longestZeroSequence
 from Oppgave_a import leser_datafil
 import matplotlib.pyplot as plt
