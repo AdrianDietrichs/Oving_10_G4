@@ -1,0 +1,27 @@
+import pandas as pd
+
+
+data = pd.read_excel('data.csv')
+
+
+data['Årstall'] = pd.to_datetime(data['Tid(norsk normaltid)']).dt.year
+
+
+gyldige_ar = data['Årstall'].value_counts()[data['Årstall'].value_counts() >= 300].index
+data_gyldig_ar = data[data['Årstall'].isin(gyldige_ar)]
+
+
+data_gyldig_ar['Penvaersdager'] = (data_gyldig_ar['Gjennomsnittlig skydekke (døgn)'] <= 3).astype(int)
+
+
+penvaersdager_per_ar = data_gyldig_ar.groupby('Årstall')['Penvaersdager'].sum()
+
+
+import matplotlib.pyplot as plt
+
+plt.plot(penvaersdager_per_ar.index, penvaersdager_per_ar, marker='o')
+plt.title('Antall penværsdager per år')
+plt.xlabel('År')
+plt.ylabel('Antall penværsdager')
+plt.grid(True)
+plt.show()
