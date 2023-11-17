@@ -26,13 +26,22 @@ years = []
 for i in sesonger:
     years.append(ListeIFTVerdi([j[1] for j in i if j[1]], 20))
 
+dager = []
+for i in sesonger:
+    counter = 0
+    for j in i:
+        if j[1] != None:
+            counter += 1
+    dager.append(counter)
+
 if __name__ == "__main__":
     _ = [print(str(years[i-1980])+" dager mellom "+str(i)+"-"+str(i+1))
          for i in range(1980,2023)]
 
-for a,i in enumerate(sesonger):
-    print(years[a])
-    for j in i:
-        print(j[0], j[1])
-    print("")
+    for a,i in enumerate(sesonger):
+        print(years[a])
+        for j in i:
+            print(j[0], j[1])
+        print("")
+
 
